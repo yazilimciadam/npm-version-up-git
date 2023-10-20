@@ -54,7 +54,7 @@ jobs:
 
       - name: Build
         id: npm-build
-        run: npm run build
+        run: npm install 
 
       - name: Test Local Action
         id: test-action

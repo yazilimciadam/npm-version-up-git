@@ -42,6 +42,20 @@ jobs:
         id: checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        id: setup-node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+        
+      - name: Install Dependencies
+        id: npm-ci
+        run: npm ci
+
+      - name: Build
+        id: npm-build
+        run: npm run build
+
       - name: Test Local Action
         id: test-action
         uses: ./
